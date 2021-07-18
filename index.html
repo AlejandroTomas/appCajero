@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="contenedor" id="firstPage">
+        <div class="contenedor-absoluto">
+            <div id="container-logIn">
+                <h2>Iniciar Sesión</h2>
+                <div class="form-div">
+                    <input type="text" placeholder="Usuario" id="name">
+                    <input type="password" placeholder="Contraseña" id="password">
+                </div>
+                <button id="btn-logIn">Entrar</button>
+            </div>
+            
+            <div id="container-singUp">
+                <h2>¿Aún no tienes cuenta?</h2>
+                <p>Registrate para que puedas Iniciar Sesión</p>
+                <button id="btn-singUp">Registrate</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dashboard" id="Dashboard">
+        <nav>
+            <div class="nav-section usuario"><p>Nakamura Tina</p></div>
+            <div class="nav-section"><h1>Cajero Martinez</h1></div>
+            <div class="nav-section"><p>Cerrar Sesión</p></div>
+        </nav>
+        <aside id="lateral">
+            <h2>Acciones</h2>
+            <div id="actions">
+                <div class="lis-action" id="act-1" pointerScreen="0" state="active"  onclick="getIndicador(this)" ><span> Consultar </span></div>
+                <div class="lis-action" id="act-2" pointerScreen="1" state="disable" onclick="getIndicador(this)" ><span> Ingresar </span></div>
+                <div class="lis-action" id="act-3" pointerScreen="2" state="disable" onclick="getIndicador(this)" ><span> Retirar </span></div>
+            </div>
+        </aside>
+        <div class="screen-content">
+            <div class="infoPanel" id="screen-1">
+                <section>
+                    <h3>Estado de Cuenta</h3>
+                    <p id="saldoTagP"></p>
+                    <p>Ultimo movimiento: <span>12/06/21</span></p>
+                    <span>Error</span>
+                </section>
+            </div>
+
+            <div class="infoPanel" id="screen-2">
+                <section>
+                    <h3>Deposito</h3>
+                    <label>Monto del Deposito:  <input type="number" placeholder="0" id="input-Dep"></label>
+                    <button id="btn-Dep">Depositar</button>
+                    <!-- <p>Saldo Actual: <span>1000</span></p>
+                    <p>Monto Depositado: <span>1100</span></p> -->
+                    <span>Error</span>
+                </section>
+            </div>
+
+            <div class="infoPanel" id="screen-3">
+                <section>
+                    <h3>Retiro</h3>
+                    <label>Saldo Actual:  <span id="saldoSpanSreen3">$2500</span></label>
+                    <label>Monto a Retirar:  <input type="number" placeholder="0" id="input-Ret"></label>
+                    <button id="btn-Ret">Retirar</button>
+                    <span>Error</span>
+                </section>
+            </div>
+            
+            <div id="asidePanel">
+                <div id="currentBalance">
+                    <p>Saldo Actual:</p>
+                    <span id="saldoSpan"></span>
+                </div>
+                <section id="preguntas">
+
+                </section>
+
+            </div>
+            <div id="movimientosPanel">
+                <div>
+                    <table id="tablaMov">
+                        <thead>
+                            <tr>
+                                <td class="tituloTabla">Movimiento</td>
+                                <td class="tituloTabla">Cantidad</td>
+                                <td class="tituloTabla">Saldo Actual</td>
+                                <td class="tituloTabla">Fecha</td>
+                            </tr>
+                        </thead>
+                    
+                        <tbody id="bodyTab">
+                            <!-- <tr class="agregado">
+                                <td class="">Deposito</td>
+                                <td class="">100</td>
+                                <td class="">1000</td>
+                                <td class="">12/05/20</td>
+                            </tr>
+                            <tr class="agregado">
+                                <td class="">Deposito</td>
+                                <td class="">100</td>
+                                <td class="">1100</td>
+                                <td class="">13/05/20</td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
