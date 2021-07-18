@@ -96,13 +96,13 @@ const userAcount =[
         if (montoDeposito > 0) {
             let sumaDeposito = userA.saldo + montoDeposito;
             if(sumaDeposito<=990){
-                alert('Deposito echo correctamente')
+                alert('Deposito hecho correctamente')
                 userA.saldo = sumaDeposito;
                 userA.record.push({r_movimiento:"Deposito",r_cantidad:montoDeposito, r_saldoActual:sumaDeposito,r_fecha:"18/07/21"})
                 recordMov(userA)
                 consultarSaldo(userA)
             }else{
-                alert("La cantidad del deposito hace que su cuenta sobre pase el tope de saldo permitido")
+                alert("La cantidad del deposito hace que su cuenta sobrepase el tope de saldo permitido")
             }
             document.getElementById('input-Dep').value = "";
         } else {
@@ -121,7 +121,7 @@ const userAcount =[
         if (montoRetiro > 0) {
             restaRetiro = userA.saldo - montoRetiro;
             if(restaRetiro >= 10){
-                alert('Retiro echo correctamente')
+                alert('Retiro hecho correctamente')
                 userA.saldo = restaRetiro;
                 userA.record.push({r_movimiento:"Retiro",r_cantidad:montoRetiro, r_saldoActual:restaRetiro,r_fecha:"18/07/21"})
                 recordMov(userA)
@@ -131,7 +131,7 @@ const userAcount =[
             }
             document.getElementById('input-Ret').value = "";
         } else {
-            alert('Retiro no completado, monto minimo no alcanzado')
+            alert('Retiro no completado, no tiene el monto a retirar')
             document.getElementById('input-Ret').value = "";
         }
     };
